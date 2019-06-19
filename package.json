@@ -4,6 +4,8 @@
   "private": true,
   "main" : "index.js",
   "scripts": {
+    "test": "mocha ./test/function-test.js",
+    "test-watch" : "nodemon --exex ./test/function-test.js",
     "start": "node app.js",
     "dev": "nodemon --exec babel-node app.js"
   },
