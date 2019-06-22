@@ -1,10 +1,12 @@
 const express = require('express');
+
 const router = express.Router();
 
+
 // Books Page 
-router.get('/books',(req,res) => res.send('Books'));
+router.get('/books',(req,res) => res.render('books'));
 
 // Book Page 
-router.get('/book',(req,res) => res.send('Book'));
+router.get('/',(req,res) => res.send('book'));
 
 module.exports = router;
