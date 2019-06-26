@@ -1,0 +1,54 @@
+{
+  "name": "webappproject",
+  "version": "0.0.0",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "one": "npm-run-all start dev lint test",
+    "start": "babel-node app.js",
+    "lint": "eslint app.js",
+    "test": "mocha ./test/ *.js ",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-env": "^2.4.1",
+    "chai": "^4.2.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "^2.6.2",
+    "express": "^4.16.4",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.16.2",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "mocha": "^6.1.4",
+    "morgan": "~1.9.1",
+    "mysql": "^2.17.1",
+    "mysql2": "^1.6.5"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-watch": "^7.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SalonSikdar/WebAppProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SalonSikdar/WebAppProject/issues"
+  },
+  "homepage": "https://github.com/SalonSikdar/WebAppProject#readme",
+  "description": ""
+}
