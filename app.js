@@ -17,6 +17,6 @@ app.use('/', require('./routes/index'))
 app.use('/', require('./routes/books'));
 app.use('/', require('./routes/authors'));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3002;
 
 app.listen(PORT, console.log('Server started on port', PORT));
