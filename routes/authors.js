@@ -3,15 +3,15 @@ const express = require('express');
 const router = express.Router();
 const mysql = require('mysql2/promise');
 
-async function main() {
+(async function main(){
   const connection = await mysql.createConnection({
     host: 'localhost', user: 'saloni', password: 'Mithi@23', database: 'goodReads',
   });
   console.log('DB Connected');
-  const [rows, fields] = await connection.execute('SELECT * FROM `Authors`');
+  const [rows, fields] = await connection.execute('SELECT * FROM `authors`');
   console.log(rows);
   return rows;
-}
+})();
 
 // Authors Page
 router.get('/authors', (req, res) => {
