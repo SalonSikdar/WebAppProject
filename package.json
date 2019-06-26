@@ -4,10 +4,11 @@
   "private": true,
   "main": "app.js",
   "scripts": {
+    "one": "npm-run-all start dev lint test",
     "start": "babel-node app.js",
-    "dev": "nodemon app.js",
-    "lint" : "eslint **/*.js",
-    "test" : "mocha ./test/ *.js "
+    "lint": "eslint app.js",
+    "test": "mocha ./test/ *.js ",
+    "dev": "nodemon app.js"
   },
   "dependencies": {
     "babel": "^6.23.0",
@@ -23,7 +24,8 @@
     "jade": "~1.11.0",
     "mocha": "^6.1.4",
     "morgan": "~1.9.1",
-    "mysql": "^2.17.1"
+    "mysql": "^2.17.1",
+    "mysql2": "^1.6.5"
   },
   "directories": {
     "test": "test"
@@ -33,6 +35,7 @@
     "@babel/node": "^7.4.5",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "babel-watch": "^7.0.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.3"

@@ -1,14 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">goodReads</a>
-
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-
+<header>
+  <% include ./header %>
+</header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
     aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,20 +21,40 @@
   </div>
 </nav>
 
-<div class="container">
-  <div class="card bg-light mb-3" style="max-width: 20rem;">
-    <div class="card-header">Top Author of the Week</div>
-    <div class="card-body">
-      <h4 class="card-title">Author Name</h4>
-      <p class="card-text">Some quick example text to build on details of the author, bet selling titles by the author.
-      </p>
-    </div>
-    <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
-      <div class="card-header">Top Book of the Week</div>
-      <div class="card-body">
-        <h4 class="card-title">Book Name</h4>
-        <p class="card-text">Some quick example text to build on book summary and author details.</p>
+<body>
+  <div class="container">
+    <div class="row">
+      <div>
+        <div class="card bg-light mb-3" style="max-width: 20rem;">
+          <div class="card-header">Top Author of the Week</div>
+          <div class="card-body">
+            <h4 class="card-title">Author Name</h4>
+            <p class="card-text">Some quick example text to build on details of the author, bet selling titles by the
+              author.
+            </p>
+          </div>
+        </div>
+        <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+          <div class="card-header">Top Book of the Week</div>
+          <div class="card-body">
+            <h4 class="card-title">Book Name</h4>
+            <p class="card-text">Some quick example text to build on book summary and author details.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <blockquote class="blockquote text-center">
+          <br>
+          <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+          <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+        </blockquote>
       </div>
     </div>
+  </div>
+</body>
 
-   
+
+
+<footer class ="footer">
+  <% include ./footer %>
+</footer>

@@ -1,0 +1,21 @@
+.myContainer{
+    display: flex;
+}
+.myContainer div[
+    border:1px black solid;
+    padding : 10px;
+]
+.boxRight{
+
+}
+.boxLeft{
+
+}
+.mynavbar {
+    background-color: #333;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font : white;
+  }

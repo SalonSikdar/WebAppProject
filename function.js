@@ -1,12 +1,12 @@
-function main(){
-    console.log("hello from function");
-    return 1;
+function main() {
+  console.log('hello from function');
+  return 1;
 }
 
-function add(){
-    return true;
+function add() {
+  return true;
 }
 module.exports = {
-    main,
-    add
-}
+  main,
+  add,
+};
