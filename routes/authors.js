@@ -16,7 +16,6 @@ async function main() {
 // Authors Page
 router.get('/authors', (req, res) => {
   const [first] = main();
-  console.log('first', first);
   res.render('authors', { rows: first });
 });
 

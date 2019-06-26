@@ -1,0 +1,76 @@
+CREATE TABLE IF NOT EXISTS authors(
+    id INT AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    age INT,
+    country VARCHAR(60),
+    about TEXT,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS books(
+    isbn INT AUTO_INCREMENT,
+    title VARCHAR(150) NOT NULL,
+    genre VARCHAR(50),
+    year INT,
+    language VARCHAR(50),
+    description TEXT,
+    PRIMARY KEY (isbn)
+);
+
+ALTER TABLE books
+ADD COLUMN author_id INT NOT NULL AFTER title;
+
+ALTER TABLE books
+ADD FOREIGN KEY books(author_id)
+REFERENCES authors(id)SDE
+ON UPDATE CASCADE;
+
+INSERT INTO authors(id,name,age,country,about)
+VALUES
+(5,'Jeff Kinney',44,'USA',"Diary of a Wimpy Kid author Jeff Kinney didn’t grow up wanting to be a children’s author. His dream was to become a newspaper cartoonist, but he wasn’t able to get his comic strips syndicated.
+
+In 1998 Jeff came up with the idea for Diary of a Wimpy Kid, a story about a middle-school weakling named Greg Heffley. Jeff worked on his book for almost eight years before showing it to a publisher in New York.
+
+Jeff Kinney was born in 1971 in Maryland and attended the University of Maryland in the early 1990s. It was there that Jeff ran a comic strip called “Igdoof” in the campus newspaper, and he knew he wanted to be a cartoonist.");
+
+INSERT INTO authors(id,name,age,country,about)
+VALUES
+(3,'Robin Cook',79,'USA',"Robin Cook is an American physician and writer of novels about medical issues united with thriller genre. He was born in Queens, New York. Cook was graduated from the Wesleyan University and Columbia University College of Physicians and Surgeons. His post graduate studies were from Harvard University. His books are a fusion of medicine and fantasy.
+In his childhood Cook wanted to become an archaeologist and then later on his aspiration turned to medicine. He was a class valedictorian and graduated with Chemistry as his major and gaining a distinction in Government. He was in charge of the Blood/Gas chemistry lab at the Columbian Presbyterian Hospital.");
+
+INSERT INTO authors(id,name,age,country,about)
+VALUES
+(4,'Rick Riordan',55,'USA',"Rick Riordan is the #1 New York Times bestselling author of over twenty novels for young readers, including the Percy Jackson series, the Kane Chronicles, the Magnus Chase series and the Trials of Apollo. He is also the author of the multi-award-winning Tres Navarre mystery series for adults.
+
+For fifteen years, Rick taught English and history at public and private middle schools in the San Francisco Bay Area and in Texas. While teaching in San Antonio, Saint Mary’s Hall honored him with the school’s first Master Teacher Award.");
+
+INSERT INTO books(isbn,title,author_id,genre,year,language,description)
+VALUES
+(3465,'Cabin Fever',5,'Comic',2009,'English',"Diary of a Wimpy Kid: Rodrick Rules is a sequel to the colossal hit 'Diary of a Wimpy Kid’. The story rotates around an 8th grader Gregory Heffley who is facing some problems which usually is not faced by a mid-school child. The new academic year has just started at school. Greg, in his journal, initiates by focusing on how disastrous his summer vacations went. Greg is a kid, who is considered as a recluse by his peers due to the “cheese touch”. Although, he tries to forget the past things as a new and fresh academic year is about to start, things do not go down well with him as his own brother Rodrick Heffley knows one of Greg’s dirty secret.");
+
+INSERT INTO books(isbn,title,author_id,genre,year,language,description)
+VALUES
+(7632,'The Last Straw',5,'Comic',2009,'English',"Diary of a Wimpy Kid: Rodrick Rules is a sequel to the colossal hit 'Diary of a Wimpy Kid’. The story rotates around an 8th grader Gregory Heffley who is facing some problems which usually is not faced by a mid-school child. The new academic year has just started at school. Greg, in his journal, initiates by focusing on how disastrous his summer vacations went. Greg is a kid, who is considered as a recluse by his peers due to the “cheese touch”. Although, he tries to forget the past things as a new and fresh academic year is about to start, things do not go down well with him as his own brother Rodrick Heffley knows one of Greg’s dirty secret.");
+
+INSERT INTO books(isbn,title,author_id,genre,year,language,description)
+VALUES
+(1897,'Rodrick Rules',5,'Comic',2009,'English',"Diary of a Wimpy Kid: Rodrick Rules is a sequel to the colossal hit 'Diary of a Wimpy Kid’. The story rotates around an 8th grader Gregory Heffley who is facing some problems which usually is not faced by a mid-school child. The new academic year has just started at school. Greg, in his journal, initiates by focusing on how disastrous his summer vacations went. Greg is a kid, who is considered as a recluse by his peers due to the “cheese touch”. Although, he tries to forget the past things as a new and fresh academic year is about to start, things do not go down well with him as his own brother Rodrick Heffley knows one of Greg’s dirty secret.");
+
+INSERT INTO books(isbn,title,author_id,genre,year,language,description)
+VALUES
+(7321,'Flawed',1,'Romance',2016,'English',":::::::::::update book desc later . ::::::::::::"),
+(5436,'Roar',1,'Fiction',2018,'English',":::::::::::update book desc later . ::::::::::::"),
+(4265,'A place called here',1,'Fiction',2016,'English',":::::::::::update book desc later . ::::::::::::"),
+(3921,'The Alchemist',2,'Adventure',1988,'English',":::::::::::update book desc later . ::::::::::::"),
+(8116,'Eleven Minutes',2,'Romance',2003,'English',":::::::::::update book desc later . ::::::::::::"),
+(9254,'Adultery',2,'Crime',2014,'English',":::::::::::update book desc later . ::::::::::::"),
+(9821,'Death Benefit',3,'Medical thriller',2003,'English',":::::::::::update book desc later . ::::::::::::"),
+(4323,'Shock',3,'Medical Thriller',2016,'English',":::::::::::update book desc later . ::::::::::::"),
+(6391,'Coma',3,'Medical Thriller',1977,'English',":::::::::::update book desc later . ::::::::::::");
+
+INSERT INTO books(isbn,title,author_id,genre,year,language,description)
+VALUES
+(5926,'The Lightening Thief',4,'Science Fiction',2010,'English',":::::::::::update book desc later . ::::::::::::"),
+(6302,'Mark of Athena',4,'Science Fiction',2010,'English',":::::::::::update book desc later . ::::::::::::"),
+(9008,'Sea Of Monsters',4,'Science Fiction',2010,'English',":::::::::::update book desc later . ::::::::::::");
+
