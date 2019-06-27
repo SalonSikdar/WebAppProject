@@ -56,7 +56,7 @@ INSERT INTO books(isbn,title,author_id,genre,year,language,description)
 VALUES
 (1897,'Rodrick Rules',5,'Comic',2009,'English',"Diary of a Wimpy Kid: Rodrick Rules is a sequel to the colossal hit 'Diary of a Wimpy Kid’. The story rotates around an 8th grader Gregory Heffley who is facing some problems which usually is not faced by a mid-school child. The new academic year has just started at school. Greg, in his journal, initiates by focusing on how disastrous his summer vacations went. Greg is a kid, who is considered as a recluse by his peers due to the “cheese touch”. Although, he tries to forget the past things as a new and fresh academic year is about to start, things do not go down well with him as his own brother Rodrick Heffley knows one of Greg’s dirty secret.");
 
-INSERT INTO books(isbn,title,author_id,genre,year,language,description)
+INSERT INTO books(id,isbn,title,author_id,genre,year,language,description)
 VALUES
 (7321,'Flawed',1,'Romance',2016,'English',":::::::::::update book desc later . ::::::::::::"),
 (5436,'Roar',1,'Fiction',2018,'English',":::::::::::update book desc later . ::::::::::::"),
