@@ -45,7 +45,7 @@
       <% authors.forEach(function(author){ %>
       <tr>
         <th scope="row"><%= author.id %></th>
-        <td><a href="/authors/<%= author.id + 1 %> "><%= author.name %></a></td>
+        <td><a href="/authors/<%= author.id - 1 %> "><%= author.name %></a></td>
         <td>
           <p><%= author.age %></p>
         </td>

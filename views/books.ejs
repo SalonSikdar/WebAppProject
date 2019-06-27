@@ -47,7 +47,7 @@
       <% books.forEach(function(book){ %>
       <tr>
         <th scope="row"><%= book.isbn %></th>
-        <td><%= book.title %></td>
+        <td><a href="/books/<%= book.isbn%> "><%= book.title %></a></td>
         <td><%= book.author_id %></td>
         <td><%= book.genre %></td>
         <td><%= book.year %></td>

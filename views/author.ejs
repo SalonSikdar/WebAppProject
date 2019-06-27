@@ -10,6 +10,7 @@
     box-sizing: border-box;
     border-radius: 10px;
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0, 2);
+    background-color: rgbA(96, 135, 179, 0.1);
   }
 
   .circle {
@@ -66,10 +67,16 @@
   </div>
 </nav>
 
-<h1>found : <%=data.userQuery %></h1>
+<!--<h1>found : <%=data.userQuery %></h1>-->
 <div class="container myContainer">
   <div class="circle"></div>
-  <h1><%=authors[data.userQuery].name %></h1>
+  <div>
+    <h1><%=authors[data.userQuery].name %></h1>
+    <div class="row">
+      <div><h6><%= authors[data.userQuery].age %> |</h6></div>
+      <div><h6><%= authors[data.userQuery].country %></h6></div>
+    </div>
+  </div>
   <p>
     <%=authors[data.userQuery].about %>
   </p>
