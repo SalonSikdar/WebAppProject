@@ -1,23 +1,37 @@
 const Joi = require('joi');
 const bcrypt = require('bcryptjs');
 const _ = require('lodash');
-const { User } = require('../models/user');
+const { User, validate } = require('../models/user');
 const express = require('express');
 const router = express.Router();
 
 router.post('/auth', async (req, res) => {
-    const { error } = validate(req.body);
-    if (error) {
-        return res.status(400).send(error.details[0].message);
-    }
-    const validPassword = await bcrypt.compare(req.body.password, user.password);
-    if (!validPassword) {
-        return res.status(400).send('Incorrect email or password.');
-    }
-    let user = await User.findOne({ email: req.body.email });
+    let user = await User.findOne({ username: req.body.username });
     if (!user) {
-        return res.status(400).send('Incorrect email or password.');
+        return res.status(400).send('Incorrect username');
     }
+
+    /*const validPassword = await*/
+    // if (!validPassword) {
+    //     return res.status(400).send('Incorrect password.');
+    // }
+    // if (error) {
+    //     return res.status(400).send(error.details[0].message);
+    // }
+
+    // console.log(req.body);
+    // console.log(user)
+    // console.log(user.password);
+    // console.log(req.body.password)
+
+    // console.log(req.body.password==) 
+
+    if (user.password == req.body.password) {
+        res.render('home');
+    } else {
+        console.log('incorrect password');
+    }
+
 });
 
 module.exports = router;

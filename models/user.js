@@ -10,21 +10,16 @@ const User = mongoose.model(
       minlength: 5,
       maxlength: 50
     },
-   
+
     password: {
       type: String,
       required: true,
       minlength: 5,
       maxlength: 1024
     },
-    email: {
-      type: String,
-      required: true,
-      minlength: 5,
-      maxlength: 255,
-      unique: true
-    }
-  })
+  
+  })//.then(console.log('new user added');)
+  // .catch(console.log('user add failed'););
 );
 
 function validateUser(user) {
@@ -33,11 +28,7 @@ function validateUser(user) {
       .min(5)
       .max(50)
       .required(),
-    email: Joi.string()
-      .min(5)
-      .max(255)
-      .required()
-      .email(),
+    
     password: Joi.string()
       .min(5)
       .max(255)
