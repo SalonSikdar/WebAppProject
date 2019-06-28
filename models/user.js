@@ -4,11 +4,18 @@ const mongoose = require("mongoose");
 const User = mongoose.model(
   "User",
   new mongoose.Schema({
-    name: {
+    username: {
       type: String,
       required: true,
       minlength: 5,
       maxlength: 50
+    },
+   
+    password: {
+      type: String,
+      required: true,
+      minlength: 5,
+      maxlength: 1024
     },
     email: {
       type: String,
@@ -16,19 +23,13 @@ const User = mongoose.model(
       minlength: 5,
       maxlength: 255,
       unique: true
-    },
-    password: {
-      type: String,
-      required: true,
-      minlength: 5,
-      maxlength: 1024
     }
   })
 );
 
 function validateUser(user) {
   const schema = {
-    name: Joi.string()
+    username: Joi.string()
       .min(5)
       .max(50)
       .required(),

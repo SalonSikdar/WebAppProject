@@ -18,7 +18,7 @@ router.get("/authors", (req, res) => {
 });
 
 // Author Page
-router.get("/authors/:userQuery", (req, res) =>{
+router.get("/authors/:userQuery", (req, res) => {
   (async function main() {
     const connection = await mysql.createConnection({
       host: "localhost",
@@ -28,7 +28,7 @@ router.get("/authors/:userQuery", (req, res) =>{
     });
     console.log("DB Connected in authors");
     const [rows, fields] = await connection.execute("SELECT * FROM `authors`");
-    res.render("author", { authors : rows , data: { userQuery: req.params.userQuery } });
+    res.render("author", { authors: rows, data: { userQuery: req.params.userQuery } });
   })();
 });
 
