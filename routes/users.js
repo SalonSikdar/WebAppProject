@@ -2,6 +2,7 @@ const { User, validate } = require("../models/user");
 const express = require("express");
 const router = express.Router();
 const bodyParsr = require('body-parser');
+const bcrypt = require('bcryptjs');
 
 router.post("/users", async (req, res) => {
   console.log(req.body);
@@ -16,10 +17,17 @@ router.post("/users", async (req, res) => {
   if (user) {
     return res.status(400).send("That user already exisits!");
   } else {
+    try {
+      const salt = await bcrypt.genSalt(10);
+      const passwordHash = bcrypt.hash('req.body.password', salt);
+    } catch (error) {
+      next(error);
+    }
+
     // Insert the new user if they do not exist yet
     user = new User({
       username: req.body.username,
-      password: req.body.password
+      password: passwordHash
       // email: req.body.email,
     });
 

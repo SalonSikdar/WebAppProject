@@ -4,6 +4,7 @@ const _ = require('lodash');
 const { User, validate } = require('../models/user');
 const express = require('express');
 const router = express.Router();
+const isValid =0;
 
 router.post('/auth', async (req, res) => {
     let user = await User.findOne({ username: req.body.username });
@@ -25,8 +26,13 @@ router.post('/auth', async (req, res) => {
     // console.log(req.body.password)
 
     // console.log(req.body.password==) 
+    try{
+       const isValid = await bcrypt.compare(user.password,req.body.password);
+    }catch(error){
+        throw new Error(error);
+    }
 
-    if (user.password == req.body.password) {
+    if (isValid) {
         res.render('home');
     } else {
         console.log('incorrect password');
