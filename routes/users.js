@@ -3,6 +3,8 @@ const express = require("express");
 const router = express.Router();
 const bodyParsr = require('body-parser');
 const bcrypt = require('bcryptjs');
+let passwordHash = undefined;
+let salt = undefined;
 
 router.post("/users", async (req, res) => {
   console.log(req.body);
@@ -13,13 +15,13 @@ router.post("/users", async (req, res) => {
   }
 
   //Check if this user already exisits
-  let user = await User.findOne({ username: req.body.username });
+  let user =  User.findOne({ username: req.body.username });
   if (user) {
     return res.status(400).send("That user already exisits!");
   } else {
     try {
-      const salt = await bcrypt.genSalt(10);
-      const passwordHash = bcrypt.hash('req.body.password', salt);
+      salt =  bcrypt.genSalt(10);
+      passwordHash = bcrypt.hash('req.body.password', salt);
     } catch (error) {
       next(error);
     }
@@ -27,12 +29,13 @@ router.post("/users", async (req, res) => {
     // Insert the new user if they do not exist yet
     user = new User({
       username: req.body.username,
-      password: passwordHash
+      password: passwordHash,
+      hash : salt,
       // email: req.body.email,
     });
 
     console.log(user)
-    await user.save();
+     user.save();
     res.render('login');
     // router.get("/books/:userQuery", (req, res) => res.render('home'));
   }

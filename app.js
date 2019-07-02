@@ -5,6 +5,8 @@ const Joi = require("joi");
 Joi.objectId = require("joi-objectid")(Joi);
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
+var session = require('express-session');
+
 // import { add } from './function';
 // var x = add();
 //  console.log(x);
@@ -36,7 +38,11 @@ app.use("/", require("./routes/users"));
 
 
 app.use(express.json());
-
+app.use(session({
+     secret: 'randomsecretsessioncat',
+     resave: 'false',
+     saveUninitialized: 'true'
+ }));
 const PORT = process.env.PORT || 3010;
 
 app.listen(PORT, console.log("Server started on port", PORT));

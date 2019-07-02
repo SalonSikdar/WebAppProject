@@ -17,6 +17,12 @@ const User = mongoose.model(
       minlength: 5,
       maxlength: 1024
     },
+    hash: {
+      type: String,
+      required: true,
+      minlength: 5,
+      maxlength: 1024
+    },
   
   })//.then(console.log('new user added');)
   // .catch(console.log('user add failed'););
