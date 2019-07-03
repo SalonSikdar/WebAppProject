@@ -15,10 +15,24 @@ var session = require('express-session');
 const db = require('./config/keys').MongoURI;
 
 //Connect to Mongo
-mongoose.connect(db, { useNewUrlParser: true })
-    .then(() => console.log('MongoDB connected...'))
-    .catch(err => console.log(err));
-
+const MongoClient = require('mongodb').MongoClient;
+const assert = require('assert');
+ 
+// Connection URL
+const url = 'mongodb://localhost:27017';
+ 
+// Database Name
+const dbName = 'test';
+ 
+// Use connect method to connect to the server
+MongoClient.connect(url, function(err, client) {
+  assert.equal(null, err);
+  console.log('MongoDB connected');
+ 
+  const db = client.db(dbName);
+ 
+  client.close();
+});
 const app = express();
 
 // EJS
@@ -43,6 +57,6 @@ app.use(session({
      resave: 'false',
      saveUninitialized: 'true'
  }));
-const PORT = process.env.PORT || 3010;
+const PORT = process.env.PORT || 3008;
 
 app.listen(PORT, console.log("Server started on port", PORT));
